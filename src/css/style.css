@@ -51,6 +51,7 @@
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
+  --bs-black-rgb-translucent: rgba(0, 0, 0, 0.7);
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
@@ -171,3 +172,112 @@ svg {
   background-color: var(--bs-black);
   fill: white;
 }
+
+.global-header{
+  background-color: var(--bs-black);
+  font-size: xx-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.global-header span{
+  color: var(--bs-body-bg);
+  font-size: xx-large;
+  text-decoration: underline var(--bs-black);
+}
+
+.global-header button{
+  size: 1.5rem;
+  font-size: xx-large;
+  background-color: var(--bs-black);
+  color: var(--bs-body-bg);
+  border: var(--bs-black);
+  display: flex;
+  align-items: center;
+  border: none;
+  border-left: var(--bs-body-bg) 1px solid;
+}
+.icon{
+  height: 50px;
+  width: 50px;
+  padding: .5rem;
+}
+.search-icon{
+  text-decoration: none;
+  padding: .5rem;
+}
+.global-header__right{
+  width: 20 rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+}
+/* .hero img{
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+
+} */
+.herotext{
+background-color: var(--bs-black-rgb-translucent);
+height: 6rem;
+}
+.herotext-right{
+background-color: var(--bs-black-rgb-translucent) ;
+height: 6rem;
+width: 100%;
+
+display: flex;
+align-items: left;
+justify-content: center;
+flex-direction: column;
+
+padding-left: 2rem;
+}
+.herotext-right h3{
+  margin: 0;
+  padding: 0;
+}
+.hero {
+    background-image: url("https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg");
+  
+    height: 30rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+
+    color: var(--bs-white);
+  }
+
+  #park-header{
+    background-color: var(--bs-black);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #park-header a{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: var(--bs-white);
+    font-size: larger;
+    text-decoration: none;
+  }
