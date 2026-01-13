@@ -176,7 +176,7 @@ svg {
 .global-header{
   padding-left: 1rem;
   background-color: var(--bs-black);
-  font-size: xx-large;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -187,13 +187,13 @@ svg {
 
 .global-header span{
   color: var(--bs-body-bg);
-  font-size: xx-large;
+  font-size: 1.5rem;
   text-decoration: underline var(--bs-black);
 }
 
 .global-header button{
   size: 1.5rem;
-  font-size: xx-large;
+  font-size: 1.5rem;
   background-color: var(--bs-black);
   color: var(--bs-body-bg);
   border: var(--bs-black);
