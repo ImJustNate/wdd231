@@ -228,26 +228,25 @@ svg {
 
 } */
 .herotext{
+  font-size: 1.5rem;
   padding-left: 1rem;
   background-color: var(--bs-black-rgb-translucent);
   height: 6rem;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  text-decoration: none;
 }
-.herotext-right{
-background-color: var(--bs-black-rgb-translucent) ;
-height: 6rem;
-width: 100%;
+.herotext a{
+  text-decoration: none;
+  font-size: 3rem;
+  color: var(--bs-white);
+  padding-right: 1rem;
+}
 
-display: flex;
-align-items: left;
-justify-content: center;
-flex-direction: column;
-
-padding-left: 2rem;
-}
-.herotext-right h3{
-  margin: 0;
-  padding: 0;
-}
 .hero {
     background-image: url("https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg");
   
@@ -266,35 +265,77 @@ padding-left: 2rem;
     align-items: end;
 
     color: var(--bs-white);
-  }
+}
 
-  #navBar{
+#navBar{
     background-color: var(--bs-black);
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
+}
 
+#navBar a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.4rem;
+  /* padding-left: .1rem;
+  padding-right: .1rem; */
+  color: var(--bs-white);
+  font-size: larger;
+  text-decoration: none;
+}
+
+
+#info{
+  /* display: flex;
+  flex-direction: row; */
+  /* height: 30rem; */
+  /* background-color: #000; */
+  display: grid;
+  grid-template-columns: 1fr ;
+}
+
+/* #info img{
+  width: 80%;
+}   */
+
+#info section{
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+#intro p{
+  font-size: 1.5rem;
+}
+#intro h3{
+  font-size: 2.5rem;
+}
+#intro{
+  padding: 2rem;
+}
+
+
+#contact{
+  background-image: url("../images/topo_pattern.png") ;
+  padding: 2rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+
+@media (min-width:800px){
   #navBar a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0.4rem;
-    /* padding-left: .1rem;
-    padding-right: .1rem; */
-    color: var(--bs-white);
-    font-size: larger;
-    text-decoration: none;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
-  #main{
-    height: 50rem;
+  #info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem;
   }
 
-  @media (min-width:800px){
-     #navBar a{
-      margin-left: 5%;
-      margin-right: 5%;
-     }
-
-  }
+}
