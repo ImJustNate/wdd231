@@ -137,6 +137,7 @@ a:hover {
 .site-title {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 .site-title > span {
   font-size: 1rem;
@@ -188,7 +189,7 @@ svg {
 .global-header span{
   color: var(--bs-body-bg);
   font-size: 1.5rem;
-  text-decoration: underline var(--bs-black);
+  text-decoration: none;
 }
 
 .global-header button{
