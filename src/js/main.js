@@ -30,7 +30,7 @@ async function init() {
   linkData(parkInfoLinks, parkData);
   return parkData
 }
-// init();
+init();
 // const parkDataGlobal = await init();
 
 
