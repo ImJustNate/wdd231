@@ -31,7 +31,7 @@ async function init() {
   return parkData
 }
 // init();
-const parkDataGlobal = await init();
+// const parkDataGlobal = await init();
 
 
 function parkInfoTemplate(info) {
