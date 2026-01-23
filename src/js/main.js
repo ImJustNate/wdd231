@@ -1,11 +1,9 @@
-import { getParkData } from "./parkService.mjs";
-  // import setHeaderFooter from "./setHeaderFooter.mjs";
-  // import { mediaCardTemplate } from "./templates.mjs";
-
-const parkData = getParkData();
+import{getParkData} from "./parkInfo"  
 
 
-const parkInfoLinks = [
+async function init() {
+  let parkData = await getParkData();
+  const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",
     link: "conditions.html",
@@ -22,10 +20,19 @@ const parkInfoLinks = [
   {
     name: "Visitor Centers &#x203A;",
     link: "visitor_centers.html",
-    image: parkData.images[9].url,
+    image: parkData.images[1].url,
     description: "Learn about the visitor centers in the park."
   }
 ];
+
+  addBlerb(parkData)
+  setHeaderInfo(parkData)
+  linkData(parkInfoLinks, parkData);
+  return parkData
+}
+// init();
+const parkDataGlobal = await init();
+
 
 function parkInfoTemplate(info) {
   return `<a href="/" class="hero-banner__title">${info.name}</a>
@@ -46,7 +53,6 @@ function setHeaderInfo(data) {
   document.querySelector(".hero").style.backgroundImage = `url(${data.images[0].url})`;
   // use the template function above to set the rest of the park specific info in the header
   document.querySelector(".herotext").innerHTML = parkInfoTemplate(data);
-  parkInfoTemplate(data)
 }
 
 function getMailingAddress(addresses) {
@@ -58,7 +64,7 @@ function getVoicePhone(numbers) {
 }
 
 function footerTemplate(data) {
-  // console.log("info in footerTemplate:", data);
+  console.log("info in footerTemplate:", data);
   // console.log("addresses:", data?.contacts.phoneNumbers);
 
   const mailing = getMailingAddress(data.addresses);
@@ -77,7 +83,7 @@ function footerTemplate(data) {
 }
 
 
-function linkData(data) 
+function linkData(data, parkData) 
 {
   const infoSection = document.getElementById("info");
   data.forEach(item => {
@@ -90,6 +96,14 @@ function linkData(data)
       `;
   });
 
+
+  //  `
+  //   <section>
+  //     <img src="${item.image}" alt="info-image">
+  //     <h1>${item.name}</h1>
+  //     <p>${item.description}</p>
+  //   </section>
+  //     `;
   document.getElementById("contact").innerHTML += footerTemplate(parkData)
 }
 
@@ -103,7 +117,3 @@ function addBlerb(data){
     <p>${data.description}</p>
   `
 }
-
-addBlerb(parkData)
-setHeaderInfo(parkData)
-linkData(parkInfoLinks);
