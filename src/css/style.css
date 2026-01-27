@@ -93,10 +93,10 @@
   box-sizing: border-box;
 }
 img {
-  width: 100%;           /* Or a fixed width like 400px */
-  aspect-ratio: 4 / 3;   /* Sets the height automatically based on width */
-  object-fit: cover;     /* Crops the edges so the image isn't distorted */
-  object-position: center 10%; /* Centers the crop */
+  width: 100%;           
+  aspect-ratio: 12 / 7;   
+  object-fit: cover;    
+  object-position: center 10%; 
 }
 
 body {
@@ -296,7 +296,7 @@ svg {
 }   */
 
 #info section{
-  width: 95%;
+  width: 80%;
   margin: auto;
   margin-top: 1rem;
   padding-bottom: 2rem;
@@ -329,8 +329,12 @@ svg {
 
   #info{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 100px 1fr 100px 1fr 100px 1fr 100px; */
+    grid-template-columns:  1fr  1fr  1fr ;
     padding: 1rem;
   }
+  /* #info img{
+    grid-column: 1/-1;
+  }   */
 
 }
