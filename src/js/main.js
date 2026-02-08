@@ -26,7 +26,7 @@ async function init() {
 ];
 
   addBlerb(parkData)
-  setHeaderInfo(parkData)
+  setHeaderFooter(parkData)
   linkData(parkInfoLinks, parkData);
   return parkData
 }
@@ -42,7 +42,7 @@ function parkInfoTemplate(info) {
   </p>`;
 }
 
-function setHeaderInfo(data) {
+export function setHeaderFooter(data) {
   // insert data into disclaimer section
   const disclaimer = document.querySelector(".disclaimer > a");
   disclaimer.href = data.url;
@@ -53,6 +53,9 @@ function setHeaderInfo(data) {
   document.querySelector(".hero").style.backgroundImage = `url(${data.images[0].url})`;
   // use the template function above to set the rest of the park specific info in the header
   document.querySelector(".herotext").innerHTML = parkInfoTemplate(data);
+  //set footer
+  document.getElementById("park-footer").innerHTML = footerTemplate(data)
+
 }
 
 function getMailingAddress(addresses) {
@@ -64,7 +67,7 @@ function getVoicePhone(numbers) {
 }
 
 function footerTemplate(data) {
-  console.log("info in footerTemplate:", data);
+  // console.log("info in footerTemplate:", data);
   // console.log("addresses:", data?.contacts.phoneNumbers);
 
   const mailing = getMailingAddress(data.addresses);
@@ -86,15 +89,17 @@ function footerTemplate(data) {
 function linkData(data, parkData) 
 {
   const infoSection = document.getElementById("info");
-  data.forEach(item => {
-    infoSection.innerHTML += `
-    <section>
-      <img src="${item.image}" alt="info-image">
-      <h1>${item.name}</h1>
-      <p>${item.description}</p>
-    </section>
-      `;
-  });
+  
+  if (infoSection)
+    data.forEach(item => {
+      infoSection.innerHTML += `
+      <section>
+        <img src="${item.image}" alt="info-image">
+        <h1>${item.name}</h1>
+        <p>${item.description}</p>
+      </section>
+        `;
+    });
 
 
   //  `
@@ -104,16 +109,17 @@ function linkData(data, parkData)
   //     <p>${item.description}</p>
   //   </section>
   //     `;
-  document.getElementById("contact").innerHTML += footerTemplate(parkData)
+  // document.getElementById("contact").innerHTML += footerTemplate(parkData)
 }
 
 
 function addBlerb(data){
   const blerb = document.getElementById("intro")
 
-  blerb.innerHTML =
-  `
-    <h3>${data.fullName}</h3>
-    <p>${data.description}</p>
-  `
+  if (blerb)
+    blerb.innerHTML =
+    `
+      <h3>${data.fullName}</h3>
+      <p>${data.description}</p>
+    `
 }

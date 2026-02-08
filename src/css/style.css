@@ -65,6 +65,12 @@
     rgba(255, 255, 255, 0.15),
     rgba(255, 255, 255, 0)
   );
+  
+  --alert-closure: #cb2027;
+  --alert-caution: #ed7e31;
+  --alert-information: #2451a9;
+  --alert-danger: #720f04;
+
   --bs-body-font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -313,7 +319,7 @@ svg {
 }
 
 
-#contact{
+#park-footer{
   background-image: url("../images/topo_pattern.png") ;
   padding: 2rem;
   font-family:Georgia, 'Times New Roman', Times, serif;
