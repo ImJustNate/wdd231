@@ -44,3 +44,27 @@
 .alert-caution {
   color: var(--alert-caution);
 }
+
+
+.visior-services{
+    border: 1px solid black;   
+    margin: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+.activities{
+    border: 1px solid black;
+    margin: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.alerts{
+    padding-bottom: 1rem;
+}
+
+.alerts h2{
+    padding-left: 4rem;
+}
