@@ -1,7 +1,7 @@
 const clientId = import.meta.env.VITE_CLIENT_ID_KEY; 
 console.log(clientId)
 
-const redirectUri = 'https://deploy-preview-8--fairplayer.netlify.app/'; 
+const redirectUri = 'https://lighthearted-nasturtium-4f74f1.netlify.app/test'; 
 const scope = 'playlist-read-private streaming user-read-playback-state user-modify-playback-state';
 
 // --- PKCE CRYPTO HELPERS ---
