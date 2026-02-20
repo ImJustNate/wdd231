@@ -1,5 +1,4 @@
 const clientId = import.meta.env.VITE_CLIENT_ID_KEY; 
-console.log(clientId)
 
 const redirectUri = 'https://lighthearted-nasturtium-4f74f1.netlify.app/test'; 
 const scope = 'playlist-read-private streaming user-read-playback-state user-modify-playback-state';
@@ -86,7 +85,6 @@ function renderPlaylists(playlists) {
             <img src="${pl.images[0]?.url || 'https://via.placeholder.com/60'}" alt="cover">
             <div>
                 <strong>${pl.name}</strong><br>
-                <small>${pl.tracks.total} tracks</small>
             </div>
         </div>
     `).join('');
