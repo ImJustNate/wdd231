@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify API Demo</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #121212; color: white; padding: 40px; }
+        .container { max-width: 800px; margin: auto; }
+        .playlist-card { 
+            background: #181818; padding: 15px; margin: 10px 0; border-radius: 8px; 
+            display: flex; align-items: center; cursor: pointer; transition: 0.3s; 
+        }
+        .playlist-card:hover { background: #282828; transform: scale(1.02); }
+        img { width: 60px; height: 60px; margin-right: 15px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        button { background: #1DB954; color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        button:hover { background: #1ed760; }
+        #login-section, #app-section { display: none; text-align: center; }
+        #playlists-container { text-align: left; margin-top: 20px; }
+    </style>
+    <script type="module" src="js/test.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Spotify Playlist Viewer</h1>
+        
+        <div id="login-section">
+            <p>Connect your account to see your music.</p>
+            <button id="login-button">Login with Spotify</button>
+        </div>
+
+        <div id="app-section">
+            <h2 id="user-greeting">Your Playlists</h2>
+            <div id="playlists-container">Loading playlists...</div>
+        </div>
+    </div>
+
+</body>
+</html>
