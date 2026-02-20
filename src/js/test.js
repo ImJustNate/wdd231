@@ -65,15 +65,13 @@ async function getAccessToken(code) {
 // --- UI & API CALLS ---
 
 async function fetchPlaylists(token) {
-    try {
-        const response = await fetch('https://api.spotify.com/v1/me/playlists', {
-            headers: { 'Authorization': `Bearer ${token}` }
-        });
-        const data = await response.json();
-        renderPlaylists(data.items);
-    } catch (error) {
-        console.error("Error fetching playlists:", error);
-    }
+    console.log("Fetching with token:", token); // Log 1
+    const response = await fetch('https://api.spotify.com/v1/me/playlists', {
+        headers: { 'Authorization': `Bearer ${token}` }
+    });
+    const data = await response.json();
+    console.log("Spotify Response:", data); // Log 2
+    renderPlaylists(data.items);
 }
 
 function renderPlaylists(playlists) {
@@ -118,18 +116,3 @@ const init = async () => {
 };
 
   init();
-
-// function sleep(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
-
-// // 2. Use it inside an async function
-// async function waitExample() {
-//   console.log("Start waiting...");
-//   await sleep(3000); // Pauses the function for 3 seconds
-//   console.log("Waited 3 seconds!");
-//   init();
-// }
-
-// // 3. Call the async function
-// waitExample();
